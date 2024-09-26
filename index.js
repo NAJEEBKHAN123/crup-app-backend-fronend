@@ -11,6 +11,14 @@ const users = [
     {id: 2, name: 'ali', email: 'alikhan@gmail.com'}
 
 ]
+
+function errorHandler(err, get, post, next){
+    console.error(err.stack);
+   res.status(err.status || 500).json({
+    message: err.message || 'something wrong!',
+    error : true
+   })
+}
 // GET request  
 
 app.get('/api/user', (req, res) =>{
@@ -60,6 +68,8 @@ app.delete('/api/user/:id',(req, res) =>{
         
     }
 })
+
+
 app.listen(PORT, () =>{
     console.log(`Server is running on http://localhost:${PORT}`)
 })
