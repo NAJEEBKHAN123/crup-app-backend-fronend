@@ -1,24 +1,24 @@
 const express = require('express')
-const core = require('core')
+const cors = require('cors')
 
 const PORT = 3000;
 const app = express();
 app.use(express.json())
-app.use(core())
+app.use(cors())
 
 const users = [
     {id: 1, name: 'najeeb', email: 'najeebkhan@gmail.com'},
     {id: 2, name: 'ali', email: 'alikhan@gmail.com'}
-
 ]
 
-function errorHandler(err, get, post, next){
-    console.error(err.stack);
-   res.status(err.status || 500).json({
-    message: err.message || 'something wrong!',
-    error : true
-   })
+
+function errorHandler(err, req, res, next) {
+    res.status(err.status || 500).json({
+        message: err.message || 'Something went wrong',
+        error: true
+    })
 }
+
 // GET request  
 
 app.get('/api/user', (req, res) =>{
@@ -68,6 +68,8 @@ app.delete('/api/user/:id',(req, res) =>{
         
     }
 })
+
+app.use(errorHandler);
 
 
 app.listen(PORT, () =>{
