@@ -3,8 +3,13 @@ const express = require('express')
 const PORT = 3000;
 const app = express();
 
-app.get('/', (req, res) =>{
-    res.send("hi this is home page")
+const users = [
+    {id: 1, name: 'najeeb', email: 'najeebkhan@gmail.com'},
+    {id: 2, name: 'ali', email: 'alikhan@gmail.com'}
+
+]
+app.get('/api/user', (req, res) =>{
+    res.status(200).json({ message: 'Fetched all users!', data: users })
 })
 
 app.listen(PORT, () =>{
