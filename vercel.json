@@ -1,0 +1,12 @@
+{
+    "projects": {
+      "root": "frontend",
+      "functions": {
+        "api/index.js": "backend/index.js"
+      },
+      "routes": [
+        { "src": "/api/(.*)", "dest": "/api/index.js" }
+      ]
+    }
+  }
+  
