@@ -7,8 +7,8 @@ app.use(express.json())
 app.use(cors())
 
 const users = [
-    {id: 1, name: 'najeeb', email: 'najeebkhan@gmail.com'},
-    {id: 2, name: 'ali', email: 'alikhan@gmail.com'}
+    {id: 1, name: 'najeebkhan', email: 'najeebkhan@gmail.com'},
+    {id: 2, name: 'kamranali', email: 'kamranali@gmail.com'}
 ]
 
 
