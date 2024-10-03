@@ -36,6 +36,7 @@ function App() {
   
   };
 
+
   const updateUserById = (id) => {
     axios.put(`${API_URL}/${id}`, { name: updateUser.name })
         .then(response => {
@@ -68,6 +69,7 @@ function App() {
       <button onClick={addUser}>Add User</button>
 
       {/* Update User */}
+      <h1>helloo</h1>
       {updateUser.id && (
         <div>
           <input
