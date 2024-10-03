@@ -62,7 +62,7 @@ function PracCoding() {
     }
   return (
     <div>
-      <h1>Preacding</h1>
+      <h1>this is my practice</h1>
       <input type="text" placeholder="enter user" value={newUser} onChange={(e) => setNewUser(e.target.value)}/>
       <button onClick={addUser}>adduser</button>
      {updateUser.id && (
